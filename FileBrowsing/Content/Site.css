@@ -1,0 +1,63 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+.color-green {
+    color: green;
+}
+* {
+    font-family: "Arial";
+}
+
+table {
+    border-collapse: collapse;
+    margin: 40px 0;
+}
+
+table thead {
+    background-color: #b3b3b3;
+    color: #fff;
+}
+
+table thead td {
+    font-size: 12px;
+    padding: 2px 14px;
+}
+
+table td {
+    text-align: center;
+    border: 1px solid #b3b3b3;
+}
+
+table tbody td {
+    color: #b3b3b3;
+    padding: 6px 18px;
+}
+
+p.curPath {
+    font-weight: bold;
+}
+
+span.curPath {
+    font-weight: normal;
+    font-size: 13px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}

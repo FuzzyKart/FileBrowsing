@@ -1,0 +1,51 @@
+﻿
+<head>
+
+    <style type="text/css">
+        
+    </style>
+</head>
+<body data-ng-app="BrowsingModule" ng-controller="BrowsingController">
+    <div ui-view="browsingContainer">
+        <div class="loadmore">
+            <div ng-show="loaderMore" ng-class="result">
+                <img src="~/Content/loader.gif" />
+                {{lblMessage}}
+            </div>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Less 10Mb</th>
+                    <th>10Mb-50Mb</th>
+                    <th>More 100Mb</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{Count.FileLenghtLess}}</td>
+                    <td>{{Count.FileLenghtMiddle}}</td>
+                    <td>{{Count.FileLenghtMore}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div ng-show="loaderMore != true">
+            <p class="curPath">Current path: <span class="curPath">{{Current}}</span></p><br>
+            <a id="ParentPath" ng-show="Parent != 'none'" href="#" ng-click="getFolderByDir(Parent)">...</a><br>
+            <div data-ng-repeat="folder in Folders">
+                <ul>
+                    <li>
+                        <a href="#" ng-click="getFolderByDir(folder.FullPath)">{{folder.PathName}}</a><br>
+                    </li>
+                </ul>
+            </div>
+            <div data-ng-repeat="file in Files">
+                {{file.FileName}}<br>
+            </div>
+        </div>
+    </div>
+</body>
+@section AngularScript{
+    <script src="~/Scripts/app/BrowsingService.js"></script>
+    <script src="~/Scripts/app/BrowsingController.js"></script>
+}
